@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c83e12f4279e96f4eb4e1f116ac246e4
+timeCreated: 1507151522
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Core Sans G 65 Bold
+  fontNames:
+  - Core Sans G 65 Bold
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
