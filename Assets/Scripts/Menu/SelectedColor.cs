@@ -34,6 +34,6 @@ public class SelectedColor : MonoBehaviour {
 	public void UpdateScore ()
 	{
 		if ( CurrentColor != Color.black)
-			 ScoreText.GetComponent<TextMesh> ().text = (Random.Range (0, 200)).ToString();
+			ScoreText.GetComponent<TextMesh> ().text = PlayerPrefs.GetInt ("BestScore_" + PlayerPrefs.GetString("SelectedColor_Name")).ToString();
 	}
 }
