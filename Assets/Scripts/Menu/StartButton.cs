@@ -6,6 +6,8 @@ public class StartButton : MonoBehaviour {
 
 	public string		MyColor		 		= "Not Set"				;
 	public GameObject	SelectionOutline 	= null					;
+	public GameObject	TheMenu			 	= null					;
+	public GameObject	TheGame			 	= null					;
 	public string		ClickAnimation 		= "Button_JustClicked"	;
 	public float		SFXPitchMin 		= 0.9f					;
 	public float		SFXPitchMax 		= 1.1f					;
@@ -29,6 +31,10 @@ public class StartButton : MonoBehaviour {
 			SetSelection			();
 			PlayClickAnimation		();
 			SetCurrentSelectedColor ();
+		}
+		else
+		{
+			BeginGame				();
 		}
 	}
 
@@ -70,5 +76,15 @@ public class StartButton : MonoBehaviour {
 			//if ( End >  Start ) MyColor = gameObject.GetComponent<MeshRenderer> ().material.name.Substring (Start, End	);
 			//if ( End <= Start ) MyColor = gameObject.GetComponent<MeshRenderer> ().material.name.Substring (Start		);
 		}
+	}
+
+	public void BeginGame ()
+	{
+		PlayClickSound ();
+
+		TheGame.SetActive (true );
+		TheMenu.SetActive (false);
+
+		PlayerPrefs.SetInt ("CurrentGameScore", 0);
 	}
 }
