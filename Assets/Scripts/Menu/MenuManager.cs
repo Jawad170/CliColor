@@ -6,7 +6,7 @@ public class MenuManager : MonoBehaviour {
 
 	[Header("On Start")]
 	public	bool	FadeButtonsIn			=	false				;
-	public	bool	RandomlySelectButtons	=	false				;
+	public	bool	RandomizeOrder			=	false				;
 	public	float	Interval				=	0.1f				;
 	public	string	FadeAnim				=	"Button_FadeIn"		;
 	public	string	HideAnim				=	"Button_Hide"		;
@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour {
 
 			HideAll (Butts);
 
-			if (RandomlySelectButtons)
+			if (RandomizeOrder)
 			{
 				for (int i = 0; i < Butts.Length; i++)
 				{

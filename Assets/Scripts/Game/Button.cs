@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
 
-	public Color	  ButtonColor	= Color.black	;
-	public Color	  SelectedColor	= Color.black	;
+	public	Color	ButtonColor				= Color.black			;
+	public	Color	SelectedColor			= Color.black			;
+	public	string	CorrectAnim				= "Button_CorrectNGo"	;
+	public	string	WrongAnim				= "Button_Err"			;
+
+	void Start ()
+	{
+		if (gameObject.GetComponent<Animator> () == null)
+			gameObject.AddComponent<Animator> ();
+	}
 
 	void OnMouseDown()
 	{
@@ -22,6 +30,12 @@ public class Button : MonoBehaviour {
 			{
 				PlayerPrefs.SetInt ("BestScore_" + PlayerPrefs.GetString("SelectedColor_Name"), PlayerPrefs.GetInt("CurrentGameScore"));
 			}
+
+			gameObject.GetComponent<Animator> ().Play (CorrectAnim);
+		}
+		else
+		{
+			gameObject.GetComponent<Animator> ().Play (WrongAnim);
 		}
 	}
 

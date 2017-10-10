@@ -23,7 +23,7 @@ public class StartButton : MonoBehaviour {
 			Debug.LogWarning ("StartButton [" + gameObject.name + "]: Selector not Selected.");
 	}
 
-	void OnMouseDown()
+	void OnMouseUp ()
 	{
 		if (!SelectionOutline.activeInHierarchy)
 		{
@@ -80,11 +80,9 @@ public class StartButton : MonoBehaviour {
 
 	public void BeginGame ()
 	{
-		PlayClickSound ();
+		PlayerPrefs.SetInt ("CurrentGameScore", 0);
 
 		TheGame.SetActive (true );
 		TheMenu.SetActive (false);
-
-		PlayerPrefs.SetInt ("CurrentGameScore", 0);
 	}
 }
